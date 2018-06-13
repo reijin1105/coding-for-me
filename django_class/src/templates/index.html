@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block body %}
+<!-- css 이용 안하고 각각 스타일을 따로 주는 경우
+<div style="color:red; font-size:2em;">hello world, {{name}}</div>
+<div style="color:#00FF00;">hello world, joe</div>
+<div style="color:blue;">hello world, blue</div>
+-->
+<!--<footer></footer>-->
+<!-- css 이용하는 경우 -->
+<div class="container">
+  <div class="col-xs-6">
+   <div class="colorful-text">
+    <!--<div>hello world, {{name}}</div>-->
+    <div>hello world, joe</div>
+    <div>hello world, blue</div>
+   </div>
+  </div>
+  <div class="col-xs-6">
+    {% for article in article_list %}
+      <div>
+        {{ article.title }}
+        <span class="label label-default">{{ article.view_count }}</span>
+      </div><!-- 줄바꾸는 태그 -->
+    {% endfor%}
+  </div>
+  <div class="col-xs-12">
+    <i class="fab fa-adversal"></i>
+    <i class="fab fa-angellist"></i>
+    <div class="fa-3x">
+      <i class="fas fa-spinner fa-spin"></i>
+      <i class="fas fa-circle-notch fa-spin"></i>
+      <i class="fas fa-sync fa-spin"></i>
+      <i class="fas fa-cog fa-spin"></i>
+      <i class="fas fa-spinner fa-pulse"></i>
+</div>
+  </div>
+</div>
+{% endblock %}
