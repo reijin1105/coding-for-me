@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .models import Article, Comment, HashTag
 
-# Create your views here.
 def index(request):
 
     # GET (기본적인 방식, 서버가 가지고 있는 데이터 그대로) & POST (서버에 데이터 저장하면 값을 변환)
@@ -39,6 +38,8 @@ def detail(request, article_id):
     article = Article.objects.get(id=article_id)
     #comment_list = Comment.objects.filter(article__id=article_id)
     #comment_list = article.article_comments.all()
+    hashtag_list = HashTag.objects.all()
+
     ctx = {
         "article" : article,
         #"comment_list" : comment_list,
