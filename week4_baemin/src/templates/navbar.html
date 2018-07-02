@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <h2 style="color:white;">Delivery</h2>
+        <span class="navbar-toggler-icon"></span>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/partner/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          {% if user.is_authenticated %} <!-- 로그인이 된 상태라면-->
+          <li class="nav-item">
+            <a class="nav-link" href="/partner/menu/">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/partner/order/">Order</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/partner/logout/">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="/partner/login/">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/partner/signup/">Sign up</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
